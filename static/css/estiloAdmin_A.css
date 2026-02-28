@@ -1,0 +1,186 @@
+/* ============================================================
+   TARTAS YOVEIA — estiloAdmin_A.css
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink:        #ff6fbe;
+  --pink-light:  #ffafd8;
+  --pink-pale:   #fff0f8;
+  --pink-border: #ffd6ef;
+  --teal:        #88d0c1;
+  --text-dark:   #2a2a2a;
+  --text-mid:    #555;
+  --white:       #ffffff;
+  --shadow:      0 4px 18px rgba(255,111,190,0.13);
+  --radius:      10px;
+  --font-main:   'Segoe UI', Arial, sans-serif;
+  --font-title:  Impact, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background: #fafafa;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* HEADER */
+header {
+  background: var(--white);
+  border-bottom: 4px solid var(--pink-light);
+  box-shadow: 0 2px 12px rgba(255,111,190,0.10);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+.logo { height: 64px; width: auto; }
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+nav ul li a {
+  font-family: var(--font-title);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--pink-light);
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.3s, background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+nav ul li a:hover {
+  color: var(--pink);
+  background: var(--pink-pale);
+  transform: scale(1.06);
+}
+
+/* MAIN PANEL */
+main {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 0 24px;
+}
+main h1 {
+  font-family: var(--font-title);
+  color: var(--pink);
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.botonesSobreTabla {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-main);
+  font-size: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+table th, table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+table th {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: var(--pink-pale);
+  color: var(--pink);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+table tr:hover td { background: #fff8fc; }
+
+.botonesTabla {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#botonVerde {
+  padding: 8px 14px;
+  background: #2eb92e;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+#botonVerde:hover { background: #25a025; transform: scale(1.04); }
+
+#botonRojo {
+  padding: 8px 14px;
+  background: #b92e2e;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+#botonRojo:hover { background: #9a2020; transform: scale(1.04); }
+
+#botonAzul {
+  padding: 8px 14px;
+  background: #2e6eb9;
+  border-radius: 6px;
+  font-family: var(--font-main);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+#botonAzul:hover { background: #1d5a9e; transform: scale(1.04); }
+
+.filtroCat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  font-family: var(--font-main);
+  width: fit-content;
+  margin-bottom: 20px;
+  border: 1.5px solid var(--pink-border);
+}
