@@ -1,36 +1,15 @@
-/* ============================================================
-   TARTAS YOVEIA — estilo_A.css
-   Mobile First · Tablet (>=768px) · Desktop (>=1100px)
-   ============================================================ */
-
-/* ---- RESET & BASE ----------------------------------------- */
-*, *::before, *::after {
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --pink:        #ff6fbe;
-  --pink-light:  #ffafd8;
-  --pink-pale:   #fff0f8;
-  --pink-border: #ffd6ef;
-  --teal:        #88d0c1;
-  --text-dark:   #2a2a2a;
-  --text-mid:    #555;
-  --white:       #ffffff;
-  --shadow:      0 4px 18px rgba(255, 111, 190, 0.13);
-  --radius:      14px;
-  --font-main:   'Segoe UI', Arial, sans-serif;
-  --font-title:  Impact, 'Arial Narrow Bold', sans-serif;
-}
-
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-main);
-  color: var(--text-dark);
-  background: var(--white);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #2a2a2a;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,8 +21,8 @@ img { display: block; max-width: 100%; }
 
 /* ---- HEADER ----------------------------------------------- */
 header {
-  background: var(--white);
-  border-bottom: 4px solid var(--pink-light);
+  background: #ffffff;
+  border-bottom: 4px solid #ffafd8;
   box-shadow: 0 2px 12px rgba(255, 111, 190, 0.10);
   position: sticky;
   top: 0;
@@ -76,10 +55,10 @@ nav ul {
 }
 
 nav ul li a {
-  font-family: var(--font-title);
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   font-size: 14px;
   letter-spacing: 2px;
-  color: var(--pink-light);
+  color: #ffafd8;
   padding: 8px 12px;
   border-radius: 8px;
   transition: color 0.3s, background 0.3s, transform 0.2s;
@@ -87,8 +66,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--pink);
-  background: var(--pink-pale);
+  color: #ff6fbe;
+  background: #fff0f8;
   transform: scale(1.06);
 }
 
@@ -98,6 +77,7 @@ nav ul li a:hover {
   width: 100%;
   overflow: hidden;
   background: #111;
+  display: none;
 }
 
 .carousel-track {
@@ -130,7 +110,7 @@ nav ul li a:hover {
   bottom: 14%;
   left: 50%;
   transform: translateX(-50%);
-  color: var(--white);
+  color: #ffffff;
   text-align: center;
   z-index: 10;
   width: 90%;
@@ -138,7 +118,7 @@ nav ul li a:hover {
 }
 
 .carousel-text h1 {
-  font-family: var(--font-title);
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   letter-spacing: 2px;
   margin-bottom: 10px;
@@ -155,7 +135,7 @@ button.btn {
   transform: translateY(-50%);
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(4px);
-  color: var(--white);
+  color: #ffffff;
   border: 2px solid rgba(255,255,255,0.35);
   border-radius: 50%;
   width: 48px;
@@ -190,8 +170,8 @@ button.next { right: 0; }
 .titulos {
   text-align: center;
   margin: 48px 0 32px;
-  color: var(--pink);
-  font-family: var(--font-title);
+  color: #ff6fbe;
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   letter-spacing: 3px;
 }
@@ -208,10 +188,10 @@ button.next { right: 0; }
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: var(--white);
-  border: 1.5px solid var(--pink-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border: 1.5px solid #ffd6ef;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(255, 111, 190, 0.13);
   padding: 20px;
   transition: transform 0.25s, box-shadow 0.25s;
 }
@@ -234,18 +214,18 @@ button.next { right: 0; }
 }
 #descripcionTecnica p {
   font-size: 15px;
-  color: var(--text-mid);
+  color: #555;
   line-height: 1.55;
 }
 #descripcionTecnica strong {
   font-size: 18px;
-  color: var(--text-dark);
+  color: #2a2a2a;
 }
 
 /* ---- SEPARATOR -------------------------------------------- */
 hr {
   border: none;
-  border-top: 2px solid var(--pink-border);
+  border-top: 2px solid #ffd6ef;
   margin: 0 auto 40px;
   width: 85%;
   max-width: 960px;
@@ -264,33 +244,34 @@ hr {
   width: 100%;
   max-width: 440px;
   height: 300px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(255, 111, 190, 0.13);
   border: 0;
 }
 
-.textoMapa { text-align: center; }
 .textoMapa h2 {
-  font-family: var(--font-title);
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--pink);
+  color: #ff6fbe;
   letter-spacing: 2px;
   margin-bottom: 12px;
+  text-align: center;
 }
 .textoMapa p {
   font-size: 16px;
-  color: var(--text-mid);
+  color: #555;
   line-height: 1.7;
+  text-align: center;
 }
 
 /* ---- LOGIN ------------------------------------------------ */
 .formLogin {
-  max-width: 420px;
+  width: 30%;
   margin: 60px auto 20px;
-  background: var(--white);
-  border: 1.5px solid var(--pink-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  border: 1.5px solid #ffa3dc;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(255, 111, 190, 0.13);
   padding: 36px 32px;
 }
 
@@ -298,7 +279,7 @@ hr {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: var(--text-mid);
+  color: #555;
   margin-bottom: 4px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -308,7 +289,7 @@ hr {
 .formLogin input[type="password"] {
   width: 100%;
   padding: 11px 14px;
-  border: 1.5px solid var(--pink-border);
+  border: 1.5px solid #ffd6ef;
   border-radius: 8px;
   font-size: 15px;
   margin-bottom: 18px;
@@ -317,15 +298,15 @@ hr {
 }
 .formLogin input[type="text"]:focus,
 .formLogin input[type="password"]:focus {
-  border-color: var(--pink);
+  border-color: #ff6fbe;
   box-shadow: 0 0 0 3px rgba(255,111,190,0.15);
 }
 
 #botonEnviar {
   width: 100%;
   padding: 13px;
-  background: var(--pink);
-  color: var(--white);
+  background: #ff6fbe;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-size: 15px;
@@ -342,22 +323,23 @@ hr {
   width: 100%;
   padding: 11px;
   background: transparent;
-  color: var(--pink);
-  border: 1.5px solid var(--pink);
+  color: #ff6fbe;
+  border: 1.5px solid #ff6fbe;
   border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s;
   display: block;
 }
-#botonCancelar:hover { background: var(--pink-pale); }
+#botonCancelar:hover { background: #fff0f8; }
 
-.registrarse { color: var(--pink); font-weight: 600; text-decoration: underline; }
+.contenedorRegistrarse{ margin: 20px auto 60px; }
+.registrarse { color: #ff6fbe; font-weight: 600; text-decoration: underline; }
 
 /* ---- FOOTER ----------------------------------------------- */
 .footer {
-  background: linear-gradient(135deg, var(--pink) 0%, #e05fa8 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #ff6fbe 0%, #e05fa8 100%);
+  color: #ffffff;
   padding: 40px 20px 24px;
   margin-top: auto;
 }
@@ -386,7 +368,7 @@ hr {
 .line {
   width: 56px;
   height: 3px;
-  background: var(--teal);
+  background: #88d0c1;
   border-radius: 2px;
   margin-bottom: 14px;
 }
@@ -399,7 +381,7 @@ hr {
 }
 
 .footer-col p { font-size: 14px; line-height: 1.7; opacity: 0.92; }
-.footer-col a { color: var(--white); }
+.footer-col a { color: #ffffff; }
 
 .social-icons {
   margin-top: 16px;
@@ -415,9 +397,9 @@ hr {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--teal);
+  background: #88d0c1;
   font-size: 18px;
-  color: var(--white);
+  color: #ffffff;
   transition: transform 0.2s, background 0.2s;
 }
 .icon:hover { transform: scale(1.12); background: #6bbfb0; }
@@ -434,7 +416,7 @@ hr {
   font-size: 13px;
   transition: color 0.2s;
 }
-.footer-links a:hover { color: var(--white); }
+.footer-links a:hover { color: #ffffff; }
 
 .footer-bottom {
   text-align: center;
@@ -443,8 +425,10 @@ hr {
   margin-top: 10px;
 }
 
-/* ====== TABLET (>=768px) ====================================*/
+/* ------- TABLET ----------------------------------------*/
 @media (min-width: 768px) {
+  .carousel { display: inline; }
+
   .header-inner { padding: 10px 36px; }
   .logo { height: 78px; }
   nav ul li a { font-size: 16px; }
@@ -455,7 +439,11 @@ hr {
     gap: 28px;
     padding: 24px 28px;
   }
-  .masVendidasCaja:nth-child(even) { flex-direction: row-reverse; }
+  .masVendidasCaja:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    text-align: end;
+  }
   .masVendidasCaja .card-img {
     width: 260px;
     flex-shrink: 0;
@@ -475,8 +463,10 @@ hr {
   .footer-container { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ====== DESKTOP (>=1100px) — 2-col centred layout ===========*/
+/* ------PC-------------------------------------------------*/
 @media (min-width: 1100px) {
+  .carousel { display: inline; }
+
   .header-inner { padding: 12px 60px; }
   .logo { height: 90px; }
   nav ul li a { font-size: 17px; padding: 8px 16px; }

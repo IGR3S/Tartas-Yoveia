@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="button" id="botonCancelar" name="cancelar" value="Cancelar">
         </form>
     </div>
-    <div>
+    <div class="contenedorRegistrarse">
         <p>Si no tienes una cuenta registrada, <a class="registrarse" href="registrar.php">registrate aquí</a></p>
     </div>
     
