@@ -1,15 +1,16 @@
 <?php
 require_once("templates/header.php");
+require_once("config/db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($_POST['usuario']) && !empty($_POST['contra'])) {
 
         $usuario = $_POST['usuario'];
-        $contra  = $_POST['contra'];
+        $contra  = $_POST['contra']; // Contraseña en texto plano que escribió el usuario
 
         // --- CONSULTA PREPARADA ---
-        $sql = "SELECT usuario, contraseña FROM usuarios WHERE usuario = ?";
+        $sql  = "SELECT usuario, contraseña, admin FROM usuarios WHERE usuario = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
@@ -17,33 +18,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // --- COMPROBAR SI EXISTE EL USUARIO ---
         if ($resultado->num_rows === 0) {
-            echo "El usuario no existe, inténtelo de nuevo";
+            echo "El usuario no existe, inténtelo de nuevo.";
             exit();
         }
 
         // --- OBTENER DATOS DEL USUARIO ---
-        $fila = $resultado->fetch_assoc();
+        $fila      = $resultado->fetch_assoc();
         $usuarioBD = $fila['usuario'];
-        $contraBD  = $fila['contraseña'];
+        $contraBD  = $fila['contraseña']; // Hash guardado en la BD
+        $esAdmin   = (bool) $fila['admin'];
 
-        // --- COMPARAR CONTRASEÑAS ---
-        if ($contra !== $contraBD) {
-            echo "Contraseña incorrecta, inténtelo de nuevo";
+        // --- VERIFICAR LA CONTRASEÑA CON password_verify() ---
+        if (!password_verify($contra, $contraBD)) {
+            //  ^^^^^^^^^^^^^^
+            //  Compara el texto plano con el hash de forma segura
+            echo "Contraseña incorrecta, inténtelo de nuevo.";
             exit();
         }
 
-        // --- COMPROBAR SI ES ADMIN ---
-        if ($usuarioBD === "admin_yoveia") {
-            $_SESSION['admin'] = $usuarioBD;
+        // --- SESIÓN SEGÚN ROL ---
+        if ($esAdmin) {
+            $_SESSION['admin']   = $usuarioBD;
         } else {
             $_SESSION['usuario'] = $usuarioBD;
         }
 
+        $conn->close();
         header("Location: inicio.php");
         exit();
 
     } else {
-        echo "Has dejado campos vacíos";
+        echo "Has dejado campos vacíos.";
         exit();
     }
 }
