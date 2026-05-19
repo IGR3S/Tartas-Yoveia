@@ -6,43 +6,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['usuario']) && !empty($_POST['contra'])) {
 
         $usuario = $_POST['usuario'];
-        $contra  = $_POST['contra']; // Contraseña en texto plano que escribió el usuario
+        $contra  = $_POST['contra'];
 
-        // --- CONSULTA PREPARADA ---
         $sql  = "SELECT usuario, contraseña, admin FROM usuarios WHERE usuario = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $usuario);
-        $stmt->execute();
-        $resultado = $stmt->get_result();
+        $stmt = $conexion->prepare($sql);
+        $stmt->execute([$usuario]);
+        $fila = $stmt->fetch();
 
-        // --- COMPROBAR SI EXISTE EL USUARIO ---
-        if ($resultado->num_rows === 0) {
-            echo "El usuario no existe, inténtelo de nuevo.";
+        if (!$fila) {
+            echo "Usuario o contraseña incorrectos.";
             exit();
         }
 
-        // --- OBTENER DATOS DEL USUARIO ---
-        $fila      = $resultado->fetch_assoc();
         $usuarioBD = $fila['usuario'];
-        $contraBD  = $fila['contraseña']; // Hash guardado en la BD
+        $contraBD  = $fila['contraseña'];
         $esAdmin   = (bool) $fila['admin'];
 
-        // --- VERIFICAR LA CONTRASEÑA CON password_verify() ---
         if (!password_verify($contra, $contraBD)) {
-            //  ^^^^^^^^^^^^^^
-            //  Compara el texto plano con el hash de forma segura
-            echo "Contraseña incorrecta, inténtelo de nuevo.";
+            echo "Usuario o contraseña incorrectos.";
             exit();
         }
 
-        // --- SESIÓN SEGÚN ROL ---
+        session_regenerate_id(true);
+
         if ($esAdmin) {
             $_SESSION['admin']   = $usuarioBD;
         } else {
             $_SESSION['usuario'] = $usuarioBD;
         }
 
-        $conn->close();
+        $conexion = null;
+
         header("Location: inicio.php");
         exit();
 
@@ -54,11 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar sesión</title>
 </head>
 <body>
     <div class="formLogin">
@@ -74,12 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="contenedorRegistrarse">
         <p>Si no tienes una cuenta registrada, <a class="registrarse" href="registrar.php">registrate aquí</a></p>
     </div>
-    
 </body>
 </html>
 
-<?php 
-
+<?php
     require_once("templates/footer.php");
-
 ?>
