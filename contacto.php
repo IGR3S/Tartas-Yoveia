@@ -1,28 +1,13 @@
-<?php 
-$css = "contacto";
-    require_once("templates/header.php");
-
-?>
-
 <?php
+$css = "contacto";
 require_once("templates/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-
 <div class="page-content">
-    <h2 class="titulos">CONTACTO</h2>
+    <h2 class="titulos">ENCARGA TU TARTA</h2>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $nombre   = trim($_POST['nombre']   ?? '');
         $apellidos = trim($_POST['apellidos'] ?? '');
@@ -33,19 +18,20 @@ require_once("templates/header.php");
         if (empty($nombre) || empty($telefono) || empty($mensaje)) {
             echo '<p class="form-error">Por favor, rellena los campos obligatorios.</p>';
         } else {
-            // Aquí iría el envío del email con mail() o PHPMailer
+            // Aquí iría el envío con PHPMailer o mail()
             echo '<p class="form-ok">¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.</p>';
         }
     }
     ?>
 
     <div class="formContacto">
-        <form action="contacto.php" method="post">
+        
+        <form action="" method="post">
 
             <div class="form-row">
                 <div class="form-group">
                     <label>Nombre <span class="obligatorio">*</span></label>
-                    <input type="text" name="nombre" placeholder="Tu nombre">
+                    <input type="text" name="nombre" placeholder="Tu nombre" required>
                 </div>
                 <div class="form-group">
                     <label>Apellidos</label>
@@ -60,12 +46,12 @@ require_once("templates/header.php");
 
             <div class="form-group">
                 <label>Teléfono <span class="obligatorio">*</span></label>
-                <input type="tel" name="telefono" placeholder="+34 600 000 000">
+                <input type="tel" name="telefono" placeholder="+34 600 000 000" required>
             </div>
 
             <div class="form-group">
                 <label>Mensaje <span class="obligatorio">*</span></label>
-                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
 
             <input type="submit" id="botonEnviar" value="Enviar mensaje">
@@ -75,6 +61,4 @@ require_once("templates/header.php");
     </div>
 </div>
 
-<?php require_once("templates/footer.php"); ?>
-</body>
-</html>
+<?php require_once("templates/footer.php"); ?> 
