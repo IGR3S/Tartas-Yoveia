@@ -1,6 +1,8 @@
 <?php
+
 $css = "contacto";
 require_once("templates/header.php");
+
 ?>
 
 <div class="page-content">
@@ -50,6 +52,11 @@ require_once("templates/header.php");
             </div>
 
             <div class="form-group">
+                <label>Fecha <span class="obligatorio">*</span></label>
+                <input type="date" name="fecha" placeholder="Para cuando quieres la tarta" required>
+            </div>
+
+            <div class="form-group">
                 <label>Mensaje <span class="obligatorio">*</span></label>
                 <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
@@ -61,4 +68,8 @@ require_once("templates/header.php");
     </div>
 </div>
 
-<?php require_once("templates/footer.php"); ?> 
+<?php 
+
+    require_once("templates/footer.php"); 
+
+?> 

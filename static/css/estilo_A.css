@@ -530,9 +530,7 @@ hr {
   color: #ff6fbe;
 }
 
-.formContacto input[type="text"],
-.formContacto input[type="email"],
-.formContacto input[type="tel"],
+.formContacto input,
 .formContacto textarea {
   width: 100%;
   padding: 11px 14px;

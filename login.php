@@ -8,37 +8,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = $_POST['usuario'];
         $contra  = $_POST['contra'];
 
-        $sql  = "SELECT usuario, contraseña, admin FROM usuarios WHERE usuario = ?";
+        $sql  = "SELECT `nombre_usuario`, `contraseña`, `administrador` FROM `usuarios` WHERE `nombre_usuario` = ?";
         $stmt = $conexion->prepare($sql);
         $stmt->execute([$usuario]);
         $fila = $stmt->fetch();
 
-        if (!$fila) {
-            echo "Usuario o contraseña incorrectos.";
-            exit();
-        }
-
-        $usuarioBD = $fila['usuario'];
-        $contraBD  = $fila['contraseña'];
-        $esAdmin   = (bool) $fila['admin'];
-
-        if (!password_verify($contra, $contraBD)) {
-            echo "Usuario o contraseña incorrectos.";
-            exit();
-        }
-
-        session_regenerate_id(true);
-
-        if ($esAdmin) {
-            $_SESSION['admin']   = $usuarioBD;
-        } else {
-            $_SESSION['usuario'] = $usuarioBD;
-        }
-
-        $conexion = null;
-
-        header("Location: inicio.php");
+    if (!$fila) {
+        echo "Usuario o contraseña incorrectos.";
         exit();
+    }
+
+    $usuarioBD = $fila['nombre_usuario'];
+    $contraBD  = $fila['contraseña'];
+    $esAdmin   = (bool) $fila['administrador'];  // ← no es 'admin', es 'administrador'
+
+    if (!password_verify($contra, $contraBD)) {
+        echo "Usuario o contraseña incorrectos.";
+        exit();
+    }
+    session_regenerate_id(true);
+    if ($esAdmin) {
+        $_SESSION['admin']   = $usuarioBD;
+    } else {
+        $_SESSION['usuario'] = $usuarioBD;
+    }
+    $conexion = null;
+    header("Location: inicio.php");
+    exit();
 
     } else {
         echo "Has dejado campos vacíos.";
