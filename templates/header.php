@@ -12,7 +12,7 @@
     <title>Tartas Yoveia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="static/img/faviconPasteleriaResize.png">
-    <link rel="stylesheet" href="static/css/estilo_A.css">
+    <link rel="stylesheet" href="static/css/estilo_B.css">
 
 </head>
 <body>
@@ -23,8 +23,7 @@
                 <ul>
                     <li><a href="inicio.php">INICIO</a></li>
                     <li><a href="inventario.php">TARTAS</a></li>
-                    <li><a href="contacto.php">CONTACTO</a></li>
-        <!-- Si se ha iniciado sesion, administracion y cerrar sesion, sino login -->
+                    <li><a href="contacto.php">ENCARGA TU TARTA</a></li>
                     <?php
                         if(isset($_SESSION['admin'])){ ?>
                         <li><a href="admin/panel.php">ADMINISTRACION</a></li>

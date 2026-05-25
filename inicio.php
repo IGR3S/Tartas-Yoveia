@@ -38,42 +38,38 @@ require_once("templates/header.php");
 
         <div class="masVendidasCaja">
             <div id="descripcionTecnica">
-                <p><strong>Nombre de tarta</strong></p>
-                <p>Descripcion brebe sobre la tarta <br>a poder ser de varias lineas</p>
-                <p>Icono ya sea gluten free o sin azucar</p>
-                <p><strong>Precio en €</strong></p>
+                <p><strong>Tarta Personalizada</strong></p>
+                <p>Elige el sabor y decoracion que quieras para <br>una ocasión especial, con extra de amor dedicación, <br>puede tener tanto obleas como figuras de <br>fondant como toppers personalizados</p>
+                <p><strong>30 ~ 50 €</strong></p>
             </div>
-            <img class="card-img" src="static/img/placeholder3.png" alt="">
+            <img class="card-img" src="static/img/Personalizada_Chef.jpeg" alt="">
         </div>
 
         <div class="masVendidasCaja">
             <div id="descripcionTecnica">
-                <p><strong>Nombre de tarta</strong></p>
-                <p>Descripcion brebe sobre la tarta <br>a poder ser de varias lineas</p>
-                <p>Icono ya sea gluten free o sin azucar</p>
-                <p><strong>Precio en €</strong></p>
+                <p><strong>Tarta de Almendra</strong></p>
+                <p>La conocida tarta con bizcocho de almendra, <br>recubierta con yema tostada y merengue caramelizado</p>
+                <p><strong>16 €</strong></p>
             </div>
-            <img class="card-img" src="static/img/placeholder3.png" alt="">
+            <img class="card-img" src="static/img/Tarta_Almendra.jpeg" alt="">
         </div>
 
         <div class="masVendidasCaja">
             <div id="descripcionTecnica">
-                <p><strong>Nombre de tarta</strong></p>
-                <p>Descripcion brebe sobre la tarta <br>a poder ser de varias lineas</p>
-                <p>Icono ya sea gluten free o sin azucar</p>
-                <p><strong>Precio en €</strong></p>
+                <p><strong>Tarta Sacher</strong></p>
+                <p>Deliciosa tarta con cobertura de chocolate y <br>mermelada de albaricoque en el centro, receta <br>del norte de europa con un sabor unico</p>
+                <p><strong>16 €</strong></p>
             </div>
-            <img class="card-img" src="static/img/placeholder3.png" alt="">
+            <img class="card-img" src="static/img/Tarta_Sacher.jpeg" alt="">
         </div>
 
         <div class="masVendidasCaja">
             <div id="descripcionTecnica">
-                <p><strong>Nombre de tarta</strong></p>
-                <p>Descripcion brebe sobre la tarta <br>a poder ser de varias lineas</p>
-                <p>Icono ya sea gluten free o sin azucar</p>
-                <p><strong>Precio en €</strong></p>
+                <p><strong>Tarta de la Abuela</strong></p>
+                <p>La tarta que conoces de toda la vida, con base <br>de galleta tostada, magdalenas y chocolate</p>
+                <p><strong>16 €</strong></p>
             </div>
-            <img class="card-img" src="static/img/placeholder3.png" alt="">
+            <img class="card-img" src="static/img/Tarta_de_la_Abuela.jpeg" alt="">
         </div>
 
     </div>

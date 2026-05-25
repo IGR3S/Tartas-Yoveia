@@ -501,7 +501,7 @@ hr {
   background: #ffffff;
   border: 1.5px solid #ffa3dc;
   border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(255, 111, 190, 0.13);
+  box-shadow: 0 4px 18px #ff6fbe21;
   padding: 24px 18px;
 }
 
@@ -546,7 +546,38 @@ hr {
 .formContacto input:focus,
 .formContacto textarea:focus {
   border-color: #ff6fbe;
-  box-shadow: 0 0 0 3px rgba(255, 111, 190, 0.15);
+  box-shadow: 0 0 0 3px #ff6fbe26;
+}
+
+.tarta-fieldset {
+  border: 1px solid #ffd6ef;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 15px;
+}
+.tarta-fieldset legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  padding: 0 8px;
+}
+
+.tarta-fieldset .opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tarta-fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.tarta-fieldset input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 0;
 }
 
 .formContacto textarea {

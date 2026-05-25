@@ -52,13 +52,21 @@ require_once("templates/header.php");
             </div>
 
             <div class="form-group">
-                <label>Fecha <span class="obligatorio">*</span></label>
+                <label>Fecha De Recogida<span class="obligatorio">*</span></label>
                 <input type="date" name="fecha" placeholder="Para cuando quieres la tarta" required>
             </div>
 
+            <fieldset class="tarta-fieldset">
+                <legend>¿TARTA TEMATICA?</legend>
+                <div class="opciones">
+                    <label><input type="radio" name="tarta_tematica" value="no" checked>No</label>
+                    <label><input type="radio" name="tarta_tematica" value="si">Sí</label>
+                </div>
+            </fieldset>
+
             <div class="form-group">
                 <label>Mensaje <span class="obligatorio">*</span></label>
-                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <textarea name="mensaje" placeholder="Escribe la informacion de la tarta que quieres..." required></textarea>
             </div>
 
             <input type="submit" id="botonEnviar" value="Enviar mensaje">

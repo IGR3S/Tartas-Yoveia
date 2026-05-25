@@ -43,17 +43,6 @@ CREATE TABLE `linea_pedidos` (
     `linea_pedido` INT NOT NULL,
     PRIMARY KEY (id_pedido, id_tarta)
 ) ENGINE = INNODB;
-
-CREATE TABLE `tartas_ingredientes` (
-    `id_tarta` INT NOT NULL,
-    `id_ingrediente` INT NOT NULL ,
-    PRIMARY KEY (id_tarta, id_ingrediente)
-) ENGINE = INNODB;
-
-CREATE TABLE `ingredientes` (
-    `id_ingrediente` INT NOT NULL PRIMARY KEY,
-    `nombre_ingrediente` VARCHAR(100) NOT NULL
-) ENGINE = INNODB;
  
 -- Creamos las claves foráneas
 ALTER TABLE `pedidos`
@@ -69,16 +58,6 @@ ON UPDATE CASCADE;
 ALTER TABLE `linea_pedidos`
 ADD CONSTRAINT `linea_to_tartas`
 FOREIGN KEY (`id_tarta`) REFERENCES `tartas` (`id_tarta`)
-ON UPDATE CASCADE;
-
-ALTER TABLE `tartas_ingredientes`
-ADD CONSTRAINT `conexion1_to_tartas`
-FOREIGN KEY (`id_tarta`) REFERENCES `tartas` (`id_tarta`)
-ON UPDATE CASCADE;
-
-ALTER TABLE `tartas_ingredientes`
-ADD CONSTRAINT `conexion1_to_ingredientes`
-FOREIGN KEY (`id_ingrediente`) REFERENCES `ingredientes` (`id_ingrediente`)
 ON UPDATE CASCADE;
  
 -- Creamos un usuario para nuestras prácticas.
