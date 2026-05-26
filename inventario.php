@@ -53,7 +53,7 @@ $tartas = $sql->fetchAll(PDO::FETCH_ASSOC);
             gap: 20px;
             padding: 0 16px 40px;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 80%;
         }
 
         /* ── CARD ── */
@@ -166,7 +166,7 @@ $tartas = $sql->fetchAll(PDO::FETCH_ASSOC);
         /* ── PC (3 columnas) ── */
         @media (min-width: 1024px) {
             .grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 32px;
                 padding: 0 40px 60px;
             }

@@ -38,8 +38,8 @@ $css = "footer";
             </div>
       
             <div class="social-icons">
-                <a href="#" class="icon facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100068791103201" class="icon facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lastartasdeyoveia/?hl=es" class="icon instagram"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </div>

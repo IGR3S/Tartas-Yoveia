@@ -70,6 +70,18 @@ main h1 {
   margin-bottom: 20px;
 }
 
+.botonesTabla {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.botonesTabla form {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 .botonesSobreTabla {
   display: flex;
   justify-content: flex-end;
@@ -89,9 +101,15 @@ table {
 }
 table th, table td {
   padding: 12px 16px;
+  border-left: 1px solid #c9c9c9;
   text-align: left;
   border-bottom: 1px solid #f0f0f0;
 }
+
+table td:first-child, table th:first-child {
+    border-left: none;
+}
+
 table th {
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -100,13 +118,8 @@ table th {
   font-size: 13px;
   text-transform: uppercase;
 }
-table tr:hover td { background: #fff8fc; }
 
-.botonesTabla {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+table tr:hover td { background: #fff8fc; }
 
 #botonVerde {
   padding: 8px 14px;

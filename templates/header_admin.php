@@ -11,7 +11,7 @@
     <title>Tartas Yoveia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="static/img/faviconPasteleriaResize.png">
-    <link rel="stylesheet" href="../static/css/estiloAdmin_A.css">
+    <link rel="stylesheet" href="../static/css/estiloAdmin_B.css">
 
 </head>
 <body>

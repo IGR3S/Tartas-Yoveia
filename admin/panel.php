@@ -13,15 +13,12 @@ if (!isset($_SESSION['admin'])) {
     </div>
     
     <br><br>
-    <table border="1">
+    <table>
         <tr>
-            <th>ID Tarta</th>
             <th>Nombre Tarta</th>
             <th>Descripcion</th>
             <th>Precio</th>
-            <th>Sin Azucar</th>
-            <th>Imagen Entera</th>
-            <th>Imagen Porción</th>
+            <th>Imagen</th>
             <th>Acciones</th>
         </tr>
 
@@ -29,31 +26,35 @@ if (!isset($_SESSION['admin'])) {
     $resultado = obtenerTartas($conexion);
     $tartas = [];
     foreach ($resultado as $fila) {
-        $id = $fila['id'];
-        if (!isset($tartas[$id])) {
-           $tartas[$id] = $fila;
-        }
+    $id = $fila['id_tarta'];  
+    if (!isset($tartas[$id])) {
+       $tartas[$id] = $fila;
     }
-    foreach ($tartas as $a) {
+}
+foreach ($tartas as $a) {
 ?>
-        <tr>
-            <td><?= $a['nombre'] ?></td>
-            <td><?= $a['descripcion'] ?></td>
-            <td><?= $a['precio'] ?></td>
-            <td><?= $a['sin_azucar'] ?></td>
-            <td><?= $a['img_entera'] ?></td>
-            <td><?= $a['img_porcion'] ?></td>
-            <td class="botonesTabla">
-                <form action="proyecto_editar.php" method="post">
-                    <input type="hidden" value="<?= $a['id'] ?>" name="id">
-                    <input type="submit" value="Editar" id="botonAzul">
-                </form>
-                <form action="proyecto_borrar.php" method="post">
-                    <input type="hidden" value="<?= $a['id'] ?>" name="id">
-                    <input type="submit" value="Borrar" id="botonRojo">
-                </form>
-            </td>
-        </tr>
-    <?php } ?>
-    </table>
-</main>
+    <tr>
+        <td><?= $a['nombre_tarta'] ?></td>     
+        <td><?= $a['descripcion'] ?></td>
+        <td><?= $a['precio'] ?></td>
+        <td>
+            <?php if (!empty($a['img_entera'])): ?>
+                <img src="../static/img/<?= rawurlencode(htmlspecialchars($a['img_entera'])) ?>" 
+                    alt="<?= htmlspecialchars($a['nombre_tarta']) ?>"
+                    style="width:80px; height:60px; object-fit:cover; border-radius:6px;">
+            <?php else: ?>
+                🎂
+            <?php endif; ?>
+        </td>
+        <td class="botonesTabla">
+            <form action="proyecto_editar.php" method="post">
+                <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id">  
+                <input type="submit" value="Editar" id="botonAzul">
+            </form>
+            <form action="proyecto_borrar.php" method="post">
+                <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id"> 
+                <input type="submit" value="Borrar" id="botonRojo">
+            </form>
+        </td>
+    </tr>
+<?php } ?>
