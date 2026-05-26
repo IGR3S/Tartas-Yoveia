@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../templates/header_admin.php';
 
-if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== "admin") {
+if (!isset($_SESSION['admin'])) {
     header('Location: ../login.php');
     exit();
 }

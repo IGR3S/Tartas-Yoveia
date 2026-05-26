@@ -285,8 +285,7 @@ hr {
   text-transform: uppercase;
 }
 
-.formLogin input[type="text"],
-.formLogin input[type="password"] {
+.formLogin input {
   width: 100%;
   padding: 11px 14px;
   border: 1.5px solid #ffd6ef;
@@ -296,11 +295,8 @@ hr {
   transition: border-color 0.25s, box-shadow 0.25s;
   outline: none;
 }
-.formLogin input[type="text"]:focus,
-.formLogin input[type="password"]:focus {
-  border-color: #ff6fbe;
-  box-shadow: 0 0 0 3px rgba(255,111,190,0.15);
-}
+
+.formLogin input:focus{ border-color: #ff6fbe; box-shadow: 0 0 0 3px #ff6fbe26; }
 
 #botonEnviar {
   width: 100%;
@@ -334,6 +330,7 @@ hr {
 #botonCancelar:hover { background: #fff0f8; }
 
 .contenedorRegistrarse{ margin: 20px auto 60px; }
+
 .registrarse { color: #ff6fbe; font-weight: 600; text-decoration: underline; }
 
 /* ---- FOOTER ----------------------------------------------- */
