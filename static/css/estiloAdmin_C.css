@@ -13,7 +13,7 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* HEADER */
+/* ---- HEADER --------------------------------------------------------------------------------------------------------------------------------------------- */
 header {
   background: #ffffff;
   border-bottom: 4px solid #ffafd8;
@@ -178,4 +178,93 @@ table tr:hover td { background: #fff8fc; }
   width: fit-content;
   margin-bottom: 20px;
   border: 1.5px solid #ffd6ef;
+}
+
+/* ---- BOTONES ADMIN --------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ── FORMULARIOS ADMIN (nuevo / editar) ── */
+.formAdmin {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 60px;
+    background: #ffffff;
+    border: 1.5px solid #ffa3dc;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(255,111,190,0.13);
+    padding: 36px 32px;
+}
+
+.formAdmin label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 4px;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.formAdmin input[type="text"],
+.formAdmin input[type="number"],
+.formAdmin textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #ffd6ef;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2a2a2a;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.formAdmin input[type="text"]:focus,
+.formAdmin input[type="number"]:focus,
+.formAdmin textarea:focus {
+    border-color: #ff6fbe;
+    box-shadow: 0 0 0 3px rgba(255,111,190,0.15);
+}
+
+.formAdmin textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formAdmin input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #ff6fbe;
+}
+
+.formAdmin input[type="submit"] {
+    width: 100%;
+    margin-top: 24px;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.formAdmin a {
+    display: block;
+    margin-top: 10px;
+}
+
+.formAdmin a input[type="button"] {
+    width: 100%;
+    padding: 11px;
+    background: #ffffff;
+    color: #ff6fbe;
+    border: 1.5px solid #ff6fbe;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.formAdmin a input[type="button"]:hover {
+    background: #fff0f8;
 }

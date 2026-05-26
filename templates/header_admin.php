@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once __DIR__ . '/../includes/conexion.php';
+    require_once __DIR__ . '/../includes/config.php';
     require_once __DIR__ . '/../includes/funciones.php';
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <title>Tartas Yoveia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="static/img/faviconPasteleriaResize.png">
-    <link rel="stylesheet" href="../static/css/estiloAdmin_B.css">
+    <link rel="stylesheet" href="../static/css/estiloAdmin_C.css">
 
 </head>
 <body>
