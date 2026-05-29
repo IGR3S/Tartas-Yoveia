@@ -6,22 +6,17 @@ require_once("templates/header.php");
 <div class="carousel">
     <div class="carousel-track">
         <div class="slide">
-            <img src="static/img/placeholder1.jpg" alt="">
+            <img src="static/img/FachadaLocal_1.jpeg" alt="">
             <div class="overlay"></div>
         </div>
         <div class="slide">
-            <img src="static/img/placeholder2.jpg" alt="">
-            <div class="overlay"></div>
-        </div>
-        <div class="slide">
-            <img src="static/img/placeholder3.png" alt="">
+            <img src="static/img/FachadaLocal_3.jpeg" alt="">
             <div class="overlay"></div>
         </div>
     </div>
 
     <div class="carousel-text">
         <h1>Bienvenido a Tartas Yoveia</h1>
-        <p>Este texto no se mueve con las slides</p>
     </div>
 
     <button class="btn prev"><i class="fa-solid fa-circle-chevron-left"></i></button>
@@ -30,7 +25,7 @@ require_once("templates/header.php");
 
 <script src="carousel.js"></script>
 
-<div class="page-content">
+<div class="contenido">
 
     <h1 class="titulos"><i class="fa-solid fa-cake-candles"></i> LAS MAS VENDIDAS <i class="fa-solid fa-cake-candles"></i></h1>
 

@@ -23,7 +23,7 @@ $css = "footer";
             <div class="line"></div>
             <div class="content">
                 <p><strong>Dirección</strong><br> C/ Mariano Benlliure, 3 Crevillent</p>
-                <p><strong>Horario</strong><br> Lunes - Sábados: 8:00 a 14:00</p>
+                <p><strong>Horario</strong><br> Martes - Sábado: 8:00 a 14:00</p>
             </div>
       
         </div>

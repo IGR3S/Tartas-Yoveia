@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql  = "INSERT INTO `tartas` (`nombre_tarta`, `descripcion`, `precio`, `sin_azucar`, `img_entera`) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conexion->prepare($sql);
+        //EL FALLO QUE HAY AQUI NO AFECTA AL CODIGO, ES UN AVISO DE INTELPHENSE PQ NO ENCUENTRA EL ARCHIVO CONEXION
 
         if ($stmt->execute([$nombre, $descripcion, $precio, $sin_azucar, $img_entera])) {
             header("Location: panel.php");
@@ -58,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>Imagen entera</label>
             <input type="text" name="img_entera" placeholder="Tarta_Ejemplo.jpeg">
 
-            <input type="submit" id="botonVerde" value="Añadir Tarta">
-            <a href="panel.php"><input type="button" id="botonRojo" value="Cancelar"></a>
+            <input type="submit" id="aceptar" value="AÑADIR TARTA">
+            <a href="panel.php"><input type="button" id="cancelar" value="CANCELAR"></a>
         </form>
     </div>
 </main>

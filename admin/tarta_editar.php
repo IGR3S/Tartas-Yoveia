@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id']) && !isset($_POST
     $id   = $_POST['id'];
     $sql  = "SELECT * FROM `tartas` WHERE `id_tarta` = ?";
     $stmt = $conexion->prepare($sql);
+    //EL FALLO QUE HAY AQUI NO AFECTA AL CODIGO, ES UN AVISO DE INTELPHENSE PQ NO ENCUENTRA EL ARCHIVO CONEXION
     $stmt->execute([$id]);
     $tarta = $stmt->fetch();
 }
@@ -24,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guardar'])) {
 
     $sql  = "UPDATE `tartas` SET `nombre_tarta`=?, `descripcion`=?, `precio`=?, `sin_azucar`=?, `img_entera`=? WHERE `id_tarta`=?";
     $stmt = $conexion->prepare($sql);
+    //EL FALLO QUE HAY AQUI NO AFECTA AL CODIGO, ES UN AVISO DE INTELPHENSE PQ NO ENCUENTRA EL ARCHIVO CONEXION
 
     if ($stmt->execute([$nombre, $descripcion, $precio, $sin_azucar, $img_entera, $id])) {
         header("Location: panel.php");
@@ -64,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['guardar'])) {
             <label>Imagen entera</label>
             <input type="text" name="img_entera" value="<?= htmlspecialchars($tarta['img_entera']) ?>">
 
-            <input type="submit" id="botonAzul" value="Guardar cambios">
-            <a href="panel.php"><input type="button" id="botonRojo" value="Cancelar"></a>
+            <input type="submit" id="aceptar" value="GUARDAR CAMBIOS">
+            <a href="panel.php"><input type="button" id="cancelar" value="CANCELAR"></a>
         </form>
     </div>
 </main>

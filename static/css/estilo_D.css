@@ -71,7 +71,7 @@ nav ul li a:hover {
   transform: scale(1.06);
 }
 
-/* ---- CAROUSEL --------------------------------------------- */
+/* ---- CAROUSEL --------------------------------------------------------------------------------------------------------------------------------------------- */
 .carousel {
   position: relative;
   width: 100%;
@@ -150,6 +150,7 @@ button.btn {
   margin: 0 10px;
   padding: 0;
 }
+
 button.btn:hover {
   background: rgba(255, 111, 190, 0.5);
   transform: translateY(-50%) scale(1.1);
@@ -157,8 +158,7 @@ button.btn:hover {
 button.prev { left: 0; }
 button.next { right: 0; }
 
-/* ---- CONTENT WRAPPER -------------------------------------- */
-.page-content {
+.contenido {
   flex: 1;
   width: 100%;
   max-width: 1280px;
@@ -166,7 +166,6 @@ button.next { right: 0; }
   padding: 0 16px;
 }
 
-/* ---- SECTION TITLES --------------------------------------- */
 .titulos {
   text-align: center;
   margin: 48px 0 32px;
@@ -176,7 +175,7 @@ button.next { right: 0; }
   letter-spacing: 3px;
 }
 
-/* ---- MAS VENDIDAS CARDS ----------------------------------- */
+/* ---- MAS VENDIDAS --------------------------------------------------------------------------------------------------------------------------------------------- */
 .masVendidas-lista {
   display: flex;
   flex-direction: column;
@@ -212,17 +211,18 @@ button.next { right: 0; }
   flex-direction: column;
   gap: 8px;
 }
+
 #descripcionTecnica p {
   font-size: 15px;
   color: #555;
   line-height: 1.55;
 }
+
 #descripcionTecnica strong {
   font-size: 18px;
   color: #2a2a2a;
 }
 
-/* ---- SEPARATOR -------------------------------------------- */
 hr {
   border: none;
   border-top: 2px solid #ffd6ef;
@@ -231,7 +231,7 @@ hr {
   max-width: 960px;
 }
 
-/* ---- MAPA SECTION ----------------------------------------- */
+/* ---- MAPA --------------------------------------------------------------------------------------------------------------------------------------------- */
 .menuMapa {
   display: flex;
   flex-direction: column;
@@ -264,7 +264,7 @@ hr {
   text-align: center;
 }
 
-/* ---- LOGIN ------------------------------------------------ */
+/* ---- LOGIN --------------------------------------------------------------------------------------------------------------------------------------------- */
 .formLogin {
   width: 30%;
   margin: 60px auto 20px;
@@ -333,7 +333,7 @@ hr {
 
 .registrarse { color: #ff6fbe; font-weight: 600; text-decoration: underline; }
 
-/* ---- FOOTER ----------------------------------------------- */
+/* ---- FOOTER --------------------------------------------------------------------------------------------------------------------------------------------- */
 .footer {
   background: linear-gradient(135deg, #ff6fbe 0%, #e05fa8 100%);
   color: #ffffff;
@@ -422,7 +422,11 @@ hr {
   margin-top: 10px;
 }
 
-/* ------- TABLET ----------------------------------------*/
+@media (max-width: 767px) {
+  .carousel { display: none; }
+}
+
+/* ==== TABLET ========================================================================================================================================== */
 @media (min-width: 768px) {
   .carousel { display: inline; }
 
@@ -460,7 +464,7 @@ hr {
   .footer-container { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ------PC-------------------------------------------------*/
+/* ==== PC ========================================================================================================================================== */
 @media (min-width: 1100px) {
   .carousel { display: inline; }
 
@@ -469,7 +473,7 @@ hr {
   nav ul li a { font-size: 17px; padding: 8px 16px; }
 
   /* Wide centred content area with decorative side margins */
-  .page-content {
+  .contenido {
     padding: 0 120px;
   }
 
@@ -486,146 +490,312 @@ hr {
   .footer-container { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ====== MOBILE — hide carousel ==============================*/
-@media (max-width: 767px) {
-  .carousel { display: none; }
-}
-
-/* ---- CONTACTO -------------------------------------------- */
+/* ---- CONTACTO --------------------------------------------------------------------------------------------------------------------------------------------- */
 .formContacto {
-  width: 95%;
-  margin: 0 auto 60px;
-  background: #ffffff;
-  border: 1.5px solid #ffa3dc;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px #ff6fbe21;
-  padding: 24px 18px;
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 18px;
-}
-
-.formContacto label {
-  font-size: 12px;
-  font-weight: 700;
-  color: #555;
-  margin-bottom: 4px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.obligatorio {
-  color: #ff6fbe;
-}
-
-.formContacto input,
-.formContacto textarea {
+  background-color: #fff;
+  border-radius: 16px;
+  border: solid 1px #ffa3dc;
+  padding: 2rem;
   width: 100%;
-  padding: 11px 14px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.mismaLinea {
+  display: flex;
+  gap: 1rem;
+}
+
+.mismaLinea .campoFormulario {
+  flex: 1;
+}
+
+.campoFormulario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.campoFormulario label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.obligatorio { color: #ff6fbe }
+
+.campoFormulario input[type="text"],
+.campoFormulario input[type="email"],
+.campoFormulario input[type="tel"],
+.campoFormulario input[type="date"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
   border: 1.5px solid #ffd6ef;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 15px;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #2a2a2a;
+  color: #333;
   outline: none;
-  transition: border-color 0.25s, box-shadow 0.25s;
+  transition: border-color 0.2s;
 }
 
-.formContacto input:focus,
-.formContacto textarea:focus {
+.campoFormulario input:focus {
   border-color: #ff6fbe;
-  box-shadow: 0 0 0 3px #ff6fbe26;
 }
 
-.tarta-fieldset {
-  border: 1px solid #ffd6ef;
+.campoFormulario textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s;
+}
+
+.campoFormulario textarea:focus {
+  border-color: #ff6fbe;
+}
+
+.campoPersonalizada {
+  border: 1.5px solid #ffd6ef;
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 15px;
 }
-.tarta-fieldset legend {
+
+.campoPersonalizada legend {
   font-size: 13px;
-  font-weight: 600;
-  color: #555;
-  padding: 0 8px;
+  font-weight: 500;
+  color: #ff6fbe;
+  padding: 8px;
 }
 
-.tarta-fieldset .opciones {
+.campoPersonalizada .pregunta {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+.campoPersonalizada .opciones {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.tarta-fieldset label {
+
+.campoPersonalizada label {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 15px;
+  cursor: pointer;
 }
-.tarta-fieldset input[type="radio"] {
+
+.campoPersonalizada input[type="radio"] {
   width: 18px;
   height: 18px;
+  accent-color: #ff6fbe;
   flex-shrink: 0;
   margin: 0;
+  cursor: pointer;
 }
 
-.formContacto textarea {
-  resize: vertical;
-  min-height: 120px;
+#botonEnviar {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #ff6fbe;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 0.75rem;
 }
 
-.form-error {
+#botonEnviar:hover { background-color: #e055a8; }
+
+#botonCancelar {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #fff;
+  color: #ff6fbe;
+  border: 2px solid #ff6fbe;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#botonCancelar:hover { background-color: #fff0f8; }
+
+/* ---- INVENTARIO --------------------------------------------------------------------------------------------------------------------------------------------- */
+.titulo {
   text-align: center;
-  color: #c03070;
-  background: #fef0f5;
-  border: 1px solid #f0b0c8;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 0 auto 20px;
-  font-size: 14px;
+  margin: 24px 16px 32px;
 }
 
-.form-ok {
-  text-align: center;
-  color: #1a7a45;
-  background: #eaf6ef;
-  border: 1px solid #9fd8b8;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 0 auto 20px;
-  font-size: 14px;
+.titulo h1 {
+  font-size: clamp(1.6rem, 6vw, 3rem);
+  color: #ff69b4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(255,105,180,0.18);
 }
 
-/* ---- TABLET (768px+) ------------------------------------- */
+.titulo p {
+  margin-top: 8px;
+  color: #b06090;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.titulo-linea {
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #f9b8d8;
+  border-radius: 4px;
+  margin: 12px auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 16px 40px;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.card {
+  border-radius: 16px;
+  border: 1.5px solid #f9b8d8;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255,105,180,0.18);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #fff0f7;
+}
+
+.card-body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #e0408a;
+  font-weight: 700;
+}
+
+.descricpionTarta {
+  font-size: 14px;
+  color: #7a3a5e;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.lleva-azucar {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  background: #fff4f9;
+  color: #e0408a;
+  border: solid 1px #f9b8d8;
+}
+
+.precio {
+  font-size: 1.3rem;
+  color: #ff69b4;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ==== TABLET ========================================================================================================================================== */
 @media (min-width: 768px) {
-  .formContacto {
-    width: 80%;
-    padding: 32px 28px;
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 24px 48px;
   }
-
-  .form-row {
-    flex-direction: row;
-    gap: 16px;
+  .titulo {
+    margin: 32px 24px 40px;
   }
-
-  .form-row .form-group {
-    flex: 1;
+  .titulo-linea {
+    width: 40%;
   }
 }
 
-/* ---- PC (1100px+) ---------------------------------------- */
-@media (min-width: 1100px) {
-  .formContacto {
-    width: 100%;
-    max-width: 520px;
-    padding: 36px 32px;
+/* ==== PC ========================================================================================================================================== */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 0 40px 60px;
+  }
+
+  .titulo {
+    margin: 48px 40px 48px;
+  }
+
+  .titulo-linea {
+    width: 30%;
+  }
+
+  .card-img {
+    height: 220px;
+  }
+
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .descricpionTarta {
+    font-size: 15px;
+  }
+
+  .precio {
+    font-size: 25px;
   }
 }

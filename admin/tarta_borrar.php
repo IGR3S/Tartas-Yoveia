@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['id'])) {
     $id   = $_POST['id'];
     $sql  = "DELETE FROM `tartas` WHERE `id_tarta` = ?";
     $stmt = $conexion->prepare($sql);
+    //EL FALLO QUE HAY AQUI NO AFECTA AL CODIGO, ES UN AVISO DE INTELPHENSE PQ NO ENCUENTRA EL ARCHIVO CONEXION
 
     if ($stmt->execute([$id])) {
         header("Location: panel.php");

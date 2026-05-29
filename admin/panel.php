@@ -7,9 +7,9 @@ if (!isset($_SESSION['admin'])) {
 }
 ?>
 <main>
-    <h1>Administracion de tartas</h1>
-    <div class="botonesSobreTabla">
-        <a href="tarta_nueva.php" id="botonVerde">Añadir Tarta</a>
+    <h1>ADMINISTRACIÓN DE TARTAS</h1>
+    <div class="botonAñadir">
+        <a href="tarta_nueva.php" id="botonVerde">AÑADIR TARTA</a>
     </div>
     
     <br><br>
@@ -49,11 +49,11 @@ foreach ($tartas as $a) {
         <td class="botonesTabla">
             <form action="tarta_editar.php" method="post">
                 <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id">  
-                <input type="submit" value="Editar" id="botonAzul">
+                <input type="submit" value="EDITAR" id="botonAzul">
             </form>
             <form action="tarta_borrar.php" method="post">
                 <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id"> 
-                <input type="submit" value="Borrar" id="botonRojo">
+                <input type="submit" value="BORRAR" id="botonRojo">
             </form>
         </td>
     </tr>
