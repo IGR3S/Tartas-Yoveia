@@ -13,7 +13,6 @@ Aplicación web para la pastelería **Tartas Yoveia** de Crevillent, que permite
 4. [Base de datos](#base-de-datos)
 5. [Roles y acceso](#roles-y-acceso)
 6. [Páginas del proyecto](#páginas-del-proyecto)
-7. [Instalación](#instalación)
 
 ---
 
