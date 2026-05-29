@@ -1,4 +1,4 @@
-# 🎂 Tartas Yoveia — Pastelería Web
+# Tartas Yoveia — Pagina Web de Pastelería Local
 > **Trabajo de Fin de Grado · Desarrollo de Aplicaciones Web (DAW)**
 
 Aplicación web para la pastelería **Tartas Yoveia** de Crevillent, que permite a los clientes consultar el catálogo de tartas, realizar encargos y gestionar el inventario desde un panel de administración.
