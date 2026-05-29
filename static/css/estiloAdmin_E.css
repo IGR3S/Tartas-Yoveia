@@ -22,7 +22,7 @@ header {
   top: 0;
   z-index: 100;
 }
-.header-inner {
+.header-menu-admin {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -137,9 +137,9 @@ table th {
 
 table tr:hover td { background: #d1d1d1; }
 
-#botonRojo {
+#botonBorrar {
   padding: 8px 18px;
-  background: #b92e2e;
+  background: #c23030;
   border-radius: 5px;
   width: 120px;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -150,11 +150,11 @@ table tr:hover td { background: #d1d1d1; }
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
-#botonRojo:hover { background: #9a2020; transform: scale(1.1); }
+#botonBorrar:hover { background: rgb(121, 18, 18); transform: scale(1.1); }
 
-#botonAzul {
+#botonEditar {
   padding: 8px 14px;
-  background: #2e6eb9;
+  background: #535bd4;
   border-radius: 5px;
   width: 120px;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -165,7 +165,7 @@ table tr:hover td { background: #d1d1d1; }
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
-#botonAzul:hover { background: #1d5a9e; transform: scale(1.1); }
+#botonEditar:hover { background: #3c429c; transform: scale(1.1); }
 
 /* ---- FORMULARIOS TARTAS --------------------------------------------------------------------------------------------------------------------------------------------- */
 .formAdmin {

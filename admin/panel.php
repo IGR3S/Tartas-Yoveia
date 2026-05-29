@@ -49,11 +49,11 @@ foreach ($tartas as $a) {
         <td class="botonesTabla">
             <form action="tarta_editar.php" method="post">
                 <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id">  
-                <input type="submit" value="EDITAR" id="botonAzul">
+                <input type="submit" value="EDITAR" id="botonEditar">
             </form>
             <form action="tarta_borrar.php" method="post">
                 <input type="hidden" value="<?= $a['id_tarta'] ?>" name="id"> 
-                <input type="submit" value="BORRAR" id="botonRojo">
+                <input type="submit" value="BORRAR" id="botonBorrar">
             </form>
         </td>
     </tr>

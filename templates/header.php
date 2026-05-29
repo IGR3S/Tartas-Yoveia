@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <div class="header-inner">
+        <div class="header-menu">
             <a href="inicio.php"><img class="logo" src="static/img/LogoPasteleria.png" alt="Tartas Yoveia"></a>
             <nav>
                 <ul>
