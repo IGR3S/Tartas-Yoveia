@@ -39,7 +39,6 @@ Tartas Yoveia es una aplicación web para una pastelería artesanal que permite:
 | Frontend     | HTML5, CSS3, JavaScript |
 | Iconos       | Font Awesome 6          |
 | Mapas        | Google Maps Embed API   |
-| Email        | PHP `mail()`            |
 
 ---
 
@@ -113,8 +112,7 @@ Catálogo de tartas disponibles en la pastelería.
 | `descripcion` | TEXT           | Descripción del producto             |
 | `precio`      | DECIMAL(10,2)  | Precio en euros                      |
 | `sin_azucar`  | BOOLEAN        | `TRUE` = apta para diabéticos        |
-| `img_entera`  | VARCHAR(200)   | Ruta de la imagen de la tarta entera |
-| `img_porcion` | VARCHAR(200)   | Ruta de la imagen de una porción     |
+| `img_entera`  | VARCHAR(200)   | Ruta de la imagen de la tarta        |
 
 ### `pedidos`
 
@@ -168,43 +166,6 @@ Las páginas del panel de administración redirigen a `login.php` si no hay una 
 
 ---
 
-## Instalación
-
-**Requisitos:** servidor con PHP 8+, MySQL o MariaDB, extensión PDO activa.
-
-1. **Copia el proyecto** en la carpeta raíz de tu servidor (p. ej. `htdocs/` o `www/`).
-
-2. **Crea la base de datos** e importa el esquema:
-
-```sql
-CREATE DATABASE tartas_yoveia;
-USE tartas_yoveia;
-SOURCE /ruta/al/proyecto/bd.sql;
-```
-
-3. **Configura la conexión** en `includes/config.php`:
-
-```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'tartas_yoveia');
-define('DB_USER', 'tu_usuario');
-define('DB_PASS', 'tu_contraseña');
-define('DB_CHARSET', 'utf8mb4');
-```
-
-4. **Crea el primer usuario administrador** directamente en la base de datos con la contraseña cifrada:
-
-```sql
-INSERT INTO usuarios (correo_usuario, contraseña, nombre_usuario, telefono_usuario, administrador)
-VALUES ('admin@tartasyoveia.com', '<hash_generado_con_password_hash>', 'admin', '600000000', TRUE);
-```
-
-> Para generar el hash puedes usar: `php -r "echo password_hash('tu_contraseña', PASSWORD_DEFAULT);"`
-
-5. **Accede** a `http://localhost/Tartas-Yoveia/inicio.php` e inicia sesión.
-
----
-
 ## Contacto
 
 **Tartas Yoveia** · C/ Mariano Benlliure, 3 · Crevillent
@@ -218,4 +179,4 @@ VALUES ('admin@tartasyoveia.com', '<hash_generado_con_password_hash>', 'admin', 
 
 ## Autor
 
-Proyecto desarrollado como **Trabajo de Fin de Grado** del ciclo de **Desarrollo de Aplicaciones Web (DAW)**.
+Proyecto desarrollado como **Trabajo de Fin de Grado** del ciclo de **Desarrollo de Aplicaciones Web (DAW)** por Sergi Espinosa Belén.
